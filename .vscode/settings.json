@@ -1,0 +1,6 @@
+{
+	"terminal.integrated.gpuAcceleration": "off",
+	"explorer.compactFolders": false,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true
+}
