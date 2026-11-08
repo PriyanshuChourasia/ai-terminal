@@ -13,8 +13,8 @@ type LOGLEVEL int
 const (
 	LevelDebug LOGLEVEL = iota
 	LevelInfo
-	LevelError
 	LevelWarn
+	LevelError
 	LevelFatal
 	LevelUnique
 )
@@ -52,7 +52,6 @@ func loadIST() *time.Location {
 }
 
 func writeLog(loglevel LOGLEVEL, colorCode, prefix, format string, args ...any) {
-	log.Printf("LogLevel %d\n", loglevel)
 	if globalLevel > loglevel {
 		log.Printf("Please return")
 		return
@@ -62,7 +61,11 @@ func writeLog(loglevel LOGLEVEL, colorCode, prefix, format string, args ...any) 
 
 	message := fmt.Sprintf(format, args...)
 
-	fmt.Fprintf(os.Stdout, "%s%s%s %s[%s]%s %s", colorTime, timestamp, colorReset, colorCode, prefix, colorReset, message)
+	fmt.Fprintf(os.Stdout, "%s%s%s %s[%s]%s %s\n", colorTime, timestamp, colorReset, colorCode, prefix, colorReset, message)
+
+	if loglevel == LevelFatal {
+		os.Exit(0)
+	}
 
 }
 
@@ -72,4 +75,12 @@ func Debug(format string, args ...any) {
 
 func Info(format string, args ...any) {
 	writeLog(LevelInfo, colorInfo, "INFO", format, args...)
+}
+
+func Fatal(format string, args ...any) {
+	writeLog(LevelFatal, colorFatal, "FATAL", format, args...)
+}
+
+func Error(format string, args ...any) {
+	writeLog(LevelError, colorError, "ERROR", format, args...)
 }
