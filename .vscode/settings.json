@@ -1,6 +1,26 @@
 {
-	"terminal.integrated.gpuAcceleration": "off",
-	"explorer.compactFolders": false,
-	"editor.formatOnPaste": true,
-	"editor.formatOnSave": true
+  "terminal.integrated.gpuAcceleration": "off",
+  "explorer.compactFolders": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+
+  "workbench.colorTheme": "Catppuccin Dark Pro",
+
+  "editor.tabSize": 4,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 24,
+
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": true,
+
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+
+  "workbench.sideBar.location": "left",
+  "workbench.activityBar.location": "default",
+  "workbench.statusBar.visible": true,
+  "workbench.editor.showTabs": "multiple"
 }

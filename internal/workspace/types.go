@@ -5,6 +5,6 @@ type WorkspacePathConfig struct {
 }
 
 type UserWorkspaceConfig struct {
-	Username   string                         `json:"username"`
-	Workspaces map[string]WorkspacePathConfig `json:"workspaces"`
+	ProjectName string                         `json:"project_name"`
+	Workspaces  map[string]WorkspacePathConfig `json:"workspaces"`
 }
